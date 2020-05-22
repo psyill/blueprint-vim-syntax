@@ -1,4 +1,8 @@
 setlocal comments=sr:/*,mb:*,ex:*/,://
 setlocal commentstring=//%s
 setlocal suffixesadd=.bp
-setlocal formatprg=bpfmt\ -o
+if executable('bpfmt')
+  setlocal formatprg=bpfmt\ -o
+endif
+setlocal formatoptions+=croqj
+setlocal foldmethod=syntax
